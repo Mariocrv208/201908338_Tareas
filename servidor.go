@@ -10,18 +10,15 @@ import (
 	"github.com/gorilla/mux"
 )
 
-//variables
-var mandar Mensajes
-
 //Struct Mensaje
 type Mensajes struct {
-	Mensajes []Mensaje `json:"Mensaje"`
+	Mensajes []Mensaje `json:"Mensajes"`
 }
 
 type Mensaje struct {
 	Origen  string `json:Origen`
 	Destino string `json:Destino`
-	msg     []Msg  `json:"msg"`
+	Msg     []Msg  `json:"Msg"`
 }
 
 type Msg struct {
@@ -35,8 +32,10 @@ func inicial(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "Si jala we uwu")
 }
 
-func agregar(w http.ResponseWriter, r *http.Request) {
+//variables
+var mandar Mensajes
 
+func agregar(w http.ResponseWriter, r *http.Request) {
 	reqBody, err := ioutil.ReadAll(r.Body)
 	if err != nil {
 		fmt.Fprintf(w, "No inserto we :c")
@@ -49,11 +48,11 @@ func agregar(w http.ResponseWriter, r *http.Request) {
 
 func Mostrar(w http.ResponseWriter, r *http.Request) {
 	for i := 0; i < len(mandar.Mensajes); i++ {
-		fmt.Printf("Origen: " + mandar.Mensajes[i].Origen)
-		fmt.Printf("Destino: " + mandar.Mensajes[i].Destino)
-		for j := 0; j < len(mandar.Mensajes[i].msg); j++ {
-			fmt.Printf("Fecha: " + mandar.Mensajes[i].msg[j].Fecha)
-			fmt.Printf("Texto: " + mandar.Mensajes[i].msg[j].Texto)
+		fmt.Println("Origen: " + mandar.Mensajes[i].Origen)
+		fmt.Println("Destino: " + mandar.Mensajes[i].Destino)
+		for j := 0; j < len(mandar.Mensajes[i].Msg); j++ {
+			fmt.Println("Fecha: " + mandar.Mensajes[i].Msg[j].Fecha)
+			fmt.Println("Texto: " + mandar.Mensajes[i].Msg[j].Texto)
 		}
 	}
 	json.NewEncoder(w).Encode(mandar)
@@ -65,6 +64,6 @@ func main() {
 	router := mux.NewRouter()
 	router.HandleFunc("/", inicial).Methods("GET")
 	router.HandleFunc("/agregar", agregar).Methods("POST")
-	router.HandleFunc("/obtenerDatos", Mostrar).Methods("GET")
+	router.HandleFunc("/Mostrar", Mostrar).Methods("GET")
 	log.Fatal(http.ListenAndServe(":3000", router))
 }
