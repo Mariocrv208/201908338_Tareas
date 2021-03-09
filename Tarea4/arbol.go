@@ -7,27 +7,27 @@ import (
 func main() {
 	//Comentario de prueba
 	usu1 := Usuarios{
-		ID:     1,
+		ID:     10,
 		Nombre: "Mario",
 		Grito:  "41546859"}
 
 	usu2 := Usuarios{
-		ID:     2,
+		ID:     5,
 		Nombre: "Jose",
 		Grito:  "41546859"}
 
 	usu3 := Usuarios{
-		ID:     3,
+		ID:     4,
 		Nombre: "Katt",
 		Grito:  "41546859"}
 
 	usu4 := Usuarios{
-		ID:     4,
+		ID:     6,
 		Nombre: "Coca",
 		Grito:  "41546859"}
 
 	usu5 := Usuarios{
-		ID:     5,
+		ID:     12,
 		Nombre: "Ken",
 		Grito:  "41546859"}
 

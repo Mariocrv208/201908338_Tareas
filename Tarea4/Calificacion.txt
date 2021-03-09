@@ -1,0 +1,24 @@
+---------------Errores---------------
+1. Con los datos que tengo no me los muestra todos
+2. No me los muestra por tener un else if 
+---------------Comentarios-----------
+1. Me imprime siempre pre num pre num
+
+Preorden 15/30
+Inorden 15/30
+PostOrden 15/30
+Arbol 10/10
+
+
+Total 55
+
+//Esta es la salida
+inord
+5
+inord
+4
+inord
+
+
+y deberian de ser 4-5-6-10-12
+
