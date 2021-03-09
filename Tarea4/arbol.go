@@ -5,7 +5,7 @@ import (
 )
 
 func main() {
-	//Comentario
+	//Comentario de prueba
 	usu1 := Usuarios{
 		ID:     1,
 		Nombre: "Mario",
